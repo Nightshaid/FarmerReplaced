@@ -22,3 +22,24 @@ def fieldGrid(size, element):
             yArr.append(element)
         xArr.append(yArr)
     return xArr
+    
+def plant_grass():
+	if get_ground_type() == Grounds.Soil:
+		till()
+
+def get_inventory():
+	Inventory = []
+	for I in Items:
+		#print(I)
+		if num_items(I) > 0:
+			Inventory.append([I,num_items(I)])
+	return Inventory
+
+def is_over(E):	
+		if get_entity_type() == E:
+			return True
+		elif get_ground_type() == E:
+			return True
+		else: 
+			return False
+
